@@ -1,6 +1,21 @@
-<main>
-    {{ content }}
-</main>
-<footer>
-    Footer
-</footer>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "partials/meta-info.liquid" %}
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body {% if type %} class={{ type }}{% endif %}>
+    {% include "partials/header.liquid" %}
+    <main class="main" id="main">
+        {{ content }}
+    </main>
+    <footer>
+        Footer
+    </footer>
+</body>
+
+</html>
