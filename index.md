@@ -1,8 +1,6 @@
 ---
 title: Home
-layout: base
+layout: page
 ---
-
-# Hello
 
 From `index.md`. Test.

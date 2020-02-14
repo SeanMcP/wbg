@@ -7,6 +7,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addLayoutAlias("base", "layouts/base.liquid");
+  eleventyConfig.addLayoutAlias("page", "layouts/page.liquid");
 
   eleventyConfig.addFilter('absoluteUrl', url => (
     `${metadata.url}${url.slice(1)}`
