@@ -7,3 +7,9 @@ body {
     background: #445c3c;
     color: white;
 }
+
+.content-container {
+    margin: 0 auto;
+    max-width: 40rem;
+    padding: 1rem;
+}
