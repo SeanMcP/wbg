@@ -2,9 +2,10 @@
 {
     "title": "Our Wilkinsburg",
     "url": "https://ourwilkinsburg.com/",
-    "description": "Our Wilkinsburg is a positive outlet about Wilkinsburg, PA by the community and for the world.",
+    "description": "Our Wilkinsburg is a positive outlet about Wilkinsburg, PA. By the community; for everyone.",
+    "tagline": "By the community; for everyone.",
     "feed": {
-      "subtitle": "Our Wilkinsburg is a positive outlet about Wilkinsburg, PA by the community and for the world.",
+      "subtitle": "Our Wilkinsburg is a positive outlet about Wilkinsburg, PA. By the community; for everyone.",
       "filename": "feed.xml",
       "path": "/feed/feed.xml",
       "url": "https://ourwilkinsburg.com/feed/feed.xml",
