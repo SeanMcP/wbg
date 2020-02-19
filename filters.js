@@ -4,13 +4,23 @@ function twoDigits(number) {
   return String(number).padStart(2, "0");
 }
 
-/** Returns a directory string based on a date object. Note: This will not play nicely with timestamped dates; refactor this if you want exact publish times */
+/** Returns a directory string based on a date object OR UTC string */
 function dateToUrl(date) {
-  // Month + 1 – JS months are 0 indexed
-  // Date + 1 – Eleventy assumes UTC, while Ruby (Liquid) runs with timezone
-  return `${date.getFullYear()}/${twoDigits(date.getMonth() + 1)}/${twoDigits(
-    date.getDate() + 1
-  )}`;
+  switch (typeof date) {
+    case 'object': {
+      // Month + 1 – JS months are 0 indexed
+      // Date + 1 – Eleventy assumes UTC, while Ruby (Liquid) runs with timezone
+      return `${date.getFullYear()}/${twoDigits(date.getMonth() + 1)}/${twoDigits(
+        date.getDate() + 1
+      )}`;
+    }
+    case 'string': {
+      return `${date.slice(0, 4)}/${date.slice(5, 7)}/${date.slice(8, 10)}`
+    }
+    default: {
+      return ''
+    }
+  }
 }
 
 /** Returns an absolute url based on the url in metadata.json */
