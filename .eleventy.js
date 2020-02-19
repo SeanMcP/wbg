@@ -1,4 +1,5 @@
 const metadata = require('./_data/metadata.json')
+const { absoluteUrl, dateToUrl } = require('./filters')
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setLiquidOptions({
@@ -14,13 +15,9 @@ module.exports = function(eleventyConfig) {
     `${metadata.url}${url.slice(1)}`
   ))
 
-  function twoDigits(number) {
-    return String(number).padStart(2, '0')
-  }
-
-  eleventyConfig.addFilter('dateToUrl', date => 
-    `${date.getFullYear()}/${twoDigits(date.getMonth() + 1)}/${twoDigits(date.getDate() + 1)}`
-  )
+  // Add Filters from `filters.js`
+  eleventyConfig.addFilter(...absoluteUrl)
+  eleventyConfig.addFilter(...dateToUrl)
 
   const directoriesToCopyToBuild = ['css']
   directoriesToCopyToBuild.forEach(dir => eleventyConfig.addPassthroughCopy(dir))
