@@ -1,34 +1,13 @@
 ---
-layout: base
+layout: article
 permalink: "/news/{{ date | dateToUrl }}/{{ page.fileSlug }}/index.html"
 ---
 
 {% assign authorData = contributorData[author] %}
 
 <div class="content-container">
-  <article>
     <h1>{{ title }}</h1>
-    <p>
-      <span>
-        {% if author %}
-          By
-          {% if authorData.twitter %}
-            <a href="https://twitter.com/{{ authorData.twitter }}">{{ author }}</a>
-          {% else %}
-            {{ author}}
-          {% endif %}
-        {% else %}
-          Staff
-        {% endif %}
-      </span>
-      ·
-      <date>{{ date | readableDateAndTime }}</date>
-    </p>
+    {% include "partials/news/byline.liquid" %}
 
     {{ content }}
-
-    <footer>
-      {% if authorData %}{{ authorData.bio }}{% endif %}
-    </footer>
-  </article>
 </div>
