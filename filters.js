@@ -1,4 +1,5 @@
 const metadata = require("./_data/metadata.json");
+const format = require('date-fns/format')
 
 function twoDigits(number) {
   return String(number).padStart(2, "0");
@@ -30,7 +31,13 @@ function absoluteUrl(url) {
   return `${metadata.url}${url.slice(1)}`;
 }
 
+/** Returns a formatted date and time */
+function readableDateAndTime(date) {
+  return format(new Date(date), "MMM. dd, yyyy · h:mm a")
+}
+
 module.exports = {
   absoluteUrl: ["absoluteUrl", absoluteUrl],
-  dateToUrl: ["dateToUrl", dateToUrl]
+  dateToUrl: ["dateToUrl", dateToUrl],
+  readableDateAndTime: ["readableDateAndTime", readableDateAndTime]
 };
