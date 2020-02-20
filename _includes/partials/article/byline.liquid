@@ -7,5 +7,9 @@
     {% endif %} {% else %} Staff {% endif %}
   </span>
   ·
+  {% if includeTimeWithDate %}
   <date>{{ date | readableDateAndTime }}</date>
+  {% else %}
+  <date>{{ date | readableDate }}</date>
+  {% endif %}
 </p>

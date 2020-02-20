@@ -4,10 +4,11 @@ permalink: "/news/{{ date | dateToUrl }}/{{ page.fileSlug }}/index.html"
 ---
 
 {% assign authorData = contributorData[author] %}
+{% assign includeTimeWithDate = true %}
 
 <div class="content-container">
-    <h1>{{ title }}</h1>
-    {% include "partials/news/byline.liquid" %}
+  <h1>{{ title }}</h1>
+  {% include "partials/article/byline.liquid" %}
 
-    {{ content }}
+  {{ content }}
 </div>
