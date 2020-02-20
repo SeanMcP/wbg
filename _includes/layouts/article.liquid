@@ -1,0 +1,11 @@
+---
+layout: base
+---
+
+{% assign authorData = contributorData[author] %}
+
+<article>
+  {{ content }}
+
+  {% include "partials/article/bio.liquid" %}
+</article>

@@ -7,6 +7,7 @@ module.exports = function(eleventyConfig) {
     strict_filters: true
   });
 
+  eleventyConfig.addLayoutAlias("article", "layouts/article.liquid");
   eleventyConfig.addLayoutAlias("base", "layouts/base.liquid");
   eleventyConfig.addLayoutAlias("news", "layouts/news.liquid");
   eleventyConfig.addLayoutAlias("page", "layouts/page.liquid");
