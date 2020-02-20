@@ -1,0 +1,5 @@
+<ol>
+    {% for group in collections.groups %}
+        <li><a href={{group.url | url}}>{{ group.data.title }}</a></li>
+    {% endfor %}
+</ol>
