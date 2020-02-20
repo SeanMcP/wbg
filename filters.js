@@ -31,13 +31,21 @@ function absoluteUrl(url) {
   return `${metadata.url}${url.slice(1)}`;
 }
 
+let readableDateString = "MMM. dd, yyyy"
+
+/** Returns a formated date */
+function readableDate(date) {
+  return format(new Date(date), readableDateString)
+}
+
 /** Returns a formatted date and time */
 function readableDateAndTime(date) {
-  return format(new Date(date), "MMM. dd, yyyy · h:mm a")
+  return format(new Date(date), readableDateString + " · h:mm a")
 }
 
 module.exports = {
   absoluteUrl: ["absoluteUrl", absoluteUrl],
   dateToUrl: ["dateToUrl", dateToUrl],
+  readableDate: ["readableDate", readableDate],
   readableDateAndTime: ["readableDateAndTime", readableDateAndTime]
 };

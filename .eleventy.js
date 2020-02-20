@@ -19,6 +19,7 @@ module.exports = function(eleventyConfig) {
   // Add Filters from `filters.js`
   eleventyConfig.addFilter(...filters.absoluteUrl)
   eleventyConfig.addFilter(...filters.dateToUrl)
+  eleventyConfig.addFilter(...filters.readableDate)
   eleventyConfig.addFilter(...filters.readableDateAndTime)
 
   const directoriesToCopyToBuild = ['css']
