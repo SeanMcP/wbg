@@ -1,0 +1,11 @@
+<p>
+  <span>
+    {% if author %} By {% if authorData.url %}
+    <a href="{{ authorData.url }}">{{ author }}</a>
+    {% else %}
+    {{ author }}
+    {% endif %} {% else %} Staff {% endif %}
+  </span>
+  ·
+  <date>{{ date | readableDateAndTime }}</date>
+</p>
