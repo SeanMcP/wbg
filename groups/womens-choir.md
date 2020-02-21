@@ -1,7 +1,7 @@
 ---
-layout: page # Add group layout
+layout: group
 title: Women's Choir
-organizer: Esther Hadassah
+contact: Esther Hadassah
 url: https://meetup.com/wbg-womens-choir
 ---
 
