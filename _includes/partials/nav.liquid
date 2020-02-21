@@ -1,0 +1,7 @@
+<nav aria-label="{{ navLabel }}">
+    {% assign orderedSections = "news groups" | split: " " %}
+    {% for section in orderedSections %}
+      {% assign href = "/" | append: section | append: "/" %}
+      <a href="{{href}}"{% if href == page.url %} class="--active"{% endif %}>{{ section | capitalize }}</a>
+    {% endfor %}
+  </nav>

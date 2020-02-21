@@ -1,6 +1,8 @@
 <header class="header">
   <div class="content-container">
-    <a href="/">{{ metadata.title }}</a>
-    <p>{{ metadata.tagline }}</p>
+    <a class="header__title" href="/">{{ metadata.title }}</a>
+    <p class="header__tagline">{{ metadata.tagline }}</p>
+    {% assign navLabel = "main navigation" %}
+    {% include "partials/nav.liquid" %}
   </div>
 </header>
