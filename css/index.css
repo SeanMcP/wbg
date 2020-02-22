@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6  {
 
 .content-container {
     margin: 0 auto;
-    max-width: 40rem;
+    max-width: 38rem;
     padding: 1rem;
 }
 
@@ -36,6 +36,13 @@ h1, h2, h3, h4, h5, h6  {
     color: #666;
     font-style: italic;
     margin-top: 0.25rem;
+}
+
+/* Main */
+
+.main {
+    font-size: 125%;
+    line-height: 150%;
 }
 
 /* Footer */
