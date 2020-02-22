@@ -1,0 +1,39 @@
+{% assign url = page.url | absoluteUrl %}
+
+<div class="article-share">
+  <span><b>Share</b></span>
+  <ul>
+    <li>
+      <a
+        href="https://facebook.com/sharer/sharer.php?u={{ url }}"
+        rel="noopener noreferrer"
+      >
+        Facebook
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://twitter.com/intent/tweet?text=“@OurWilkinsburg: {{ url }}"
+        rel="noopener noreferrer"
+      >
+        Twitter
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://reddit.com/submit?url={{ url }}"
+        rel="noopener noreferrer"
+      >
+        Reddit
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://linkedin.com/shareArticle?url={{ url }}"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+    </li>
+  </ul>
+</div>

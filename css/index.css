@@ -47,3 +47,18 @@ h1, h2, h3, h4, h5, h6  {
 .footer p {
     margin-top: 0;
 }
+
+/* Partials */
+
+/* partials/article/share.liquid */
+
+.article-share ul {
+    display: inline;
+    list-style-type: none;
+    padding: 0;
+}
+
+.article-share li {
+    display: inline;
+    margin-left: 1rem;
+}
