@@ -7,9 +7,11 @@
     {% endif %} {% else %} Staff {% endif %}
   </span>
   ·
-  {% if includeTimeWithDate %}
-  <date>{{ date | readableDateAndTime }}</date>
-  {% else %}
-  <date>{{ date | readableDate }}</date>
-  {% endif %}
+  <time datetime="{{ date }}">
+    {% if timely %}
+    {{ date | readableDateAndTime }}
+    {% else %}
+    {{ date | readableDate }}
+    {% endif %}
+  </time>
 </p>

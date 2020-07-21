@@ -1,37 +1,37 @@
-const metadata = require('./_data/metadata.json')
-const filters = require('./filters')
+const metadata = require('./src/_data/metadata.json')
+const filters = require('./src/filters')
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setLiquidOptions({
+module.exports = function(config) {
+  config.setLiquidOptions({
     dynamicPartials: true,
     strict_filters: true
   });
 
-  eleventyConfig.addLayoutAlias("article", "layouts/article.liquid");
-  eleventyConfig.addLayoutAlias("base", "layouts/base.liquid");
-  eleventyConfig.addLayoutAlias("group", "layouts/group.liquid");
-  eleventyConfig.addLayoutAlias("news", "layouts/news.liquid");
-  eleventyConfig.addLayoutAlias("page", "layouts/page.liquid");
+  config.addLayoutAlias("article", "layouts/article.liquid");
+  config.addLayoutAlias("base", "layouts/base.liquid");
+  config.addLayoutAlias("group", "layouts/group.liquid");
+  config.addLayoutAlias("news", "layouts/news.liquid");
+  config.addLayoutAlias("page", "layouts/page.liquid");
 
-  eleventyConfig.addFilter('absoluteUrl', url => (
+  config.addFilter('absoluteUrl', url => (
     `${metadata.url}${url.slice(1)}`
   ))
 
   // Add Filters from `filters.js`
-  eleventyConfig.addFilter(...filters.absoluteUrl)
-  eleventyConfig.addFilter(...filters.dateToUrl)
-  eleventyConfig.addFilter(...filters.readableDate)
-  eleventyConfig.addFilter(...filters.readableDateAndTime)
+  config.addFilter(...filters.absoluteUrl)
+  config.addFilter(...filters.dateToUrl)
+  config.addFilter(...filters.readableDate)
+  config.addFilter(...filters.readableDateAndTime)
 
-  const directoriesToCopyToBuild = ['css']
-  directoriesToCopyToBuild.forEach(dir => eleventyConfig.addPassthroughCopy(dir))
+  const directoriesToCopyToBuild = ['src/css']
+  directoriesToCopyToBuild.forEach(dir => config.addPassthroughCopy(dir))
 
   return {
     templateFormats: ["liquid", "md"],
     markdownTemplateEngine: "liquid",
     passthroughFileCopy: true,
     dir: {
-      input: ".",
+      input: "src",
       includes: "_includes",
       data: "_data",
       output: "_site"
